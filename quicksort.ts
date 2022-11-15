@@ -3,17 +3,17 @@ sort(arr);
 console.log(arr);
 
 function sort(arr: Array<number>): void {
-  quickSort(arr, 0, arr.length - 1);
+  quicksort(arr, 0, arr.length - 1);
 }
 
-function quickSort(arr: Array<number>, low: number, high: number): void {
+function quicksort(arr: Array<number>, low: number, high: number): void {
   if (low >= high) {
     return;
   }
 
   const pi = partition(arr, low, high);
-  quickSort(arr, low, pi - 1);
-  quickSort(arr, pi + 1, high);
+  quicksort(arr, low, pi - 1);
+  quicksort(arr, pi + 1, high);
 }
 
 function partition(arr: Array<number>, low: number, high: number): number {
