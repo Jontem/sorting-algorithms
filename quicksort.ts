@@ -2,7 +2,7 @@ const arr = [10, 9, 1, 4, 1, 2, 6, 8, 3];
 sort(arr);
 console.log(arr);
 
-function sort(arr: Array<number>): void {
+export function sort(arr: Array<number>): void {
   quicksort(arr, 0, arr.length - 1);
 }
 
