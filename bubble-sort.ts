@@ -28,6 +28,10 @@ function bubbleSort(arr: Array<number>): void {
   } while (swapped);
 }
 
+// First pass the largest element will be last
+// which means that we could skip that position next pass
+// Second pass the second largest will be second last and
+// the process repeats
 function optimizedBubbleSort(arr: Array<number>): void {
   let swapped;
   let n = arr.length;
