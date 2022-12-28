@@ -11,24 +11,24 @@ function quicksort(arr: Array<number>, low: number, high: number): void {
     return;
   }
 
-  const pi = partition(arr, low, high);
-  quicksort(arr, low, pi - 1);
-  quicksort(arr, pi + 1, high);
+  const pIndex = partition(arr, low, high);
+  quicksort(arr, low, pIndex - 1);
+  quicksort(arr, pIndex + 1, high);
 }
 
 function partition(arr: Array<number>, low: number, high: number): number {
   const pivot = arr[high];
-  let i = low - 1;
+  let pIndex = low - 1;
 
   for (let j = low; j <= high - 1; j++) {
     if (arr[j] <= pivot) {
-      i++;
-      swap(arr, i, j);
+      pIndex++;
+      swap(arr, pIndex, j);
     }
   }
-  i++;
-  swap(arr, i, high);
-  return i;
+  pIndex++;
+  swap(arr, pIndex, high);
+  return pIndex;
 }
 
 function swap(arr: Array<number>, i1: number, i2: number): void {
