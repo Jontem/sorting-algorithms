@@ -1,9 +1,9 @@
-const arr = [10, 9, 1, 4, 2, 6, 5, 8, 3];
-const newArr = sort(arr);
-console.log(JSON.stringify(newArr));
+const arr = [10, 9, 1, 7, 4, 2, 6, 5, 8, 3];
+const sorted = sort(arr);
+console.log(JSON.stringify(sorted));
 
-export function sort(arr: Array<number>): Array<number> {
-  return mergeSort(arr);
+export function sort(arr: ReadonlyArray<number>): ReadonlyArray<number> {
+  return mergeSort(arr.concat());
 }
 
 function mergeSort(arr: Array<number>): Array<number> {
